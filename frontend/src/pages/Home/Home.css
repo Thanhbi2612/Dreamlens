@@ -1,0 +1,35 @@
+/* ============================================
+   HOME PAGE
+   ============================================ */
+.home-page {
+  position: relative;
+}
+
+.home-main-content {
+  transition: margin-left 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Khi user đã login và sidebar mở */
+.home-main-content.sidebar-open {
+  margin-left: 280px; /* Width của sidebar khi expanded */
+}
+
+/* Khi user đã login và sidebar collapsed */
+.home-main-content.sidebar-collapsed {
+  margin-left: 60px; /* Width của sidebar khi collapsed */
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .home-main-content {
+    margin-left: 0;
+  }
+
+  .home-main-content.sidebar-collapsed {
+    margin-left: 0;
+  }
+}

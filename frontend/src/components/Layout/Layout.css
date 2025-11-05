@@ -1,0 +1,98 @@
+/* ============================================
+   LAYOUT COMPONENT STYLES
+   Background effects và overall structure
+   ============================================ */
+
+.layout-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ============================================
+   BACKGROUND GRADIENT EFFECTS
+   ============================================ */
+
+.background-effects {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.1;
+}
+
+.gradient-blob-purple {
+  top: 0;
+  left: 25%;
+  width: 24rem;
+  height: 24rem;
+  background: #A66CFF;
+}
+
+.gradient-blob-aqua {
+  bottom: 0;
+  right: 25%;
+  width: 24rem;
+  height: 24rem;
+  background: #3EECAC;
+}
+
+.gradient-blob-pink {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 37.5rem;
+  height: 37.5rem;
+  background: #FFB6C1;
+}
+
+/* ============================================
+   STARS BACKGROUND
+   ============================================ */
+
+.stars-container {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(245, 245, 245, 0.3);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Tạo stars với different sizes */
+.star-small {
+  width: 2px;
+  height: 2px;
+}
+
+.star-medium {
+  width: 3px;
+  height: 3px;
+}
+
+.star-large {
+  width: 4px;
+  height: 4px;
+}
+
+/* ============================================
+   CONTENT WRAPPER
+   ============================================ */
+
+.layout-content {
+  position: relative;
+  z-index: 1;
+}

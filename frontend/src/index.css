@@ -1,0 +1,130 @@
+/* ============================================
+   MUSEMAP - MAIN STYLES
+   Import order: Tailwind → Animations → Global
+   ============================================ */
+
+/* Tailwind v4 - Import từ package */
+@import "tailwindcss";
+
+/* ============================================
+   CUSTOM THEME - Tailwind v4 Style
+   ============================================ */
+
+@theme {
+  /* Custom Colors */
+  --color-dream-dark: #0D0D1A;
+  --color-dream-purple: #A66CFF;
+  --color-dream-aqua: #3EECAC;
+  --color-dream-text: #F5F5F5;
+  --color-dream-pink: #FFB6C1;
+
+  /* Custom Animations */
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* Import custom styles */
+@import './styles/animations.css';
+@import './styles/global.css';
+
+/* ============================================
+   THEME VARIABLES (Dynamic - Controlled by ThemeContext)
+   Default: Purple Dream - Will be overridden by ThemeContext
+   ============================================ */
+
+:root {
+  /* Base colors */
+  --color-primary: #A66CFF;
+  --color-secondary: #3EECAC;
+  --color-accent: #FFB6C1;
+  --color-background: #0D0D1A;
+
+  /* Precomputed opacity variants - Primary */
+  --color-primary-3: rgba(166, 108, 255, 0.03);
+  --color-primary-5: rgba(166, 108, 255, 0.05);
+  --color-primary-8: rgba(166, 108, 255, 0.08);
+  --color-primary-10: rgba(166, 108, 255, 0.10);
+  --color-primary-12: rgba(166, 108, 255, 0.12);
+  --color-primary-15: rgba(166, 108, 255, 0.15);
+  --color-primary-20: rgba(166, 108, 255, 0.20);
+  --color-primary-25: rgba(166, 108, 255, 0.25);
+  --color-primary-30: rgba(166, 108, 255, 0.30);
+  --color-primary-40: rgba(166, 108, 255, 0.40);
+  --color-primary-50: rgba(166, 108, 255, 0.50);
+  --color-primary-60: rgba(166, 108, 255, 0.60);
+  --color-primary-70: rgba(166, 108, 255, 0.70);
+  --color-primary-80: rgba(166, 108, 255, 0.80);
+
+  /* Precomputed opacity variants - Secondary */
+  --color-secondary-3: rgba(62, 236, 172, 0.03);
+  --color-secondary-5: rgba(62, 236, 172, 0.05);
+  --color-secondary-8: rgba(62, 236, 172, 0.08);
+  --color-secondary-10: rgba(62, 236, 172, 0.10);
+  --color-secondary-12: rgba(62, 236, 172, 0.12);
+  --color-secondary-15: rgba(62, 236, 172, 0.15);
+  --color-secondary-20: rgba(62, 236, 172, 0.20);
+  --color-secondary-25: rgba(62, 236, 172, 0.25);
+  --color-secondary-30: rgba(62, 236, 172, 0.30);
+  --color-secondary-40: rgba(62, 236, 172, 0.40);
+  --color-secondary-50: rgba(62, 236, 172, 0.50);
+  --color-secondary-60: rgba(62, 236, 172, 0.60);
+  --color-secondary-70: rgba(62, 236, 172, 0.70);
+  --color-secondary-80: rgba(62, 236, 172, 0.80);
+
+  /* Precomputed opacity variants - Accent */
+  --color-accent-3: rgba(255, 182, 193, 0.03);
+  --color-accent-5: rgba(255, 182, 193, 0.05);
+  --color-accent-8: rgba(255, 182, 193, 0.08);
+  --color-accent-10: rgba(255, 182, 193, 0.10);
+  --color-accent-12: rgba(255, 182, 193, 0.12);
+  --color-accent-15: rgba(255, 182, 193, 0.15);
+  --color-accent-20: rgba(255, 182, 193, 0.20);
+  --color-accent-25: rgba(255, 182, 193, 0.25);
+  --color-accent-30: rgba(255, 182, 193, 0.30);
+  --color-accent-40: rgba(255, 182, 193, 0.40);
+  --color-accent-50: rgba(255, 182, 193, 0.50);
+  --color-accent-60: rgba(255, 182, 193, 0.60);
+  --color-accent-70: rgba(255, 182, 193, 0.70);
+  --color-accent-80: rgba(255, 182, 193, 0.80);
+
+  /* Precomputed opacity variants - Background */
+  --color-background-3: rgba(13, 13, 26, 0.03);
+  --color-background-5: rgba(13, 13, 26, 0.05);
+  --color-background-8: rgba(13, 13, 26, 0.08);
+  --color-background-10: rgba(13, 13, 26, 0.10);
+  --color-background-12: rgba(13, 13, 26, 0.12);
+  --color-background-15: rgba(13, 13, 26, 0.15);
+  --color-background-20: rgba(13, 13, 26, 0.20);
+  --color-background-25: rgba(13, 13, 26, 0.25);
+  --color-background-30: rgba(13, 13, 26, 0.30);
+  --color-background-40: rgba(13, 13, 26, 0.40);
+  --color-background-50: rgba(13, 13, 26, 0.50);
+  --color-background-60: rgba(13, 13, 26, 0.60);
+  --color-background-70: rgba(13, 13, 26, 0.70);
+  --color-background-80: rgba(13, 13, 26, 0.80);
+
+  /* Fixed colors (not theme-dependent) */
+  --color-text: #F5F5F5;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+}
+
+/* ============================================
+   BASE CONFIGURATION
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}

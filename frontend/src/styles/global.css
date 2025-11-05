@@ -1,0 +1,145 @@
+/* ============================================
+   GLOBAL STYLES - MuseMap
+   Styles chung cho toàn bộ ứng dụng
+   ============================================ */
+
+/* Custom scrollbar cho theme mộng mị */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Gradient text */
+.gradient-text-purple-aqua {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-full {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient backgrounds */
+.gradient-bg-purple-aqua {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.gradient-bg-card {
+  background: linear-gradient(135deg, var(--color-primary-10) 0%, var(--color-secondary-10) 100%);
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: var(--color-background-70);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 20px var(--color-primary-30);
+}
+
+.glow-aqua {
+  box-shadow: 0 0 20px var(--color-secondary-30);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px var(--color-accent-30);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 300ms ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-scale {
+  transition: transform 300ms ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Border gradients */
+.border-gradient {
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(var(--color-background), var(--color-background)),
+    linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* ============================================
+   RESPONSIVE HELPERS
+   ============================================ */
+
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================
+   FOCUS STATES
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}

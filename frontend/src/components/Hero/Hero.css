@@ -1,0 +1,479 @@
+/* ============================================
+   HERO COMPONENT STYLES
+   ============================================ */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  padding-top: 5rem;
+}
+
+.hero-container {
+  max-width: 64rem;
+  width: 100%;
+}
+
+/* ============================================
+   HERO TITLE
+   ============================================ */
+
+.hero-title-wrapper {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #A66CFF 0%, #3EECAC 50%, #FFB6C1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(245, 245, 245, 0.8);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-features {
+  color: rgba(245, 245, 245, 0.6);
+  font-size: 1rem;
+}
+
+/* ============================================
+   DREAM INPUT CARD
+   ============================================ */
+
+.dream-card-wrapper {
+  position: relative;
+}
+
+/* Glow effect background */
+.dream-card-glow {
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(135deg, #A66CFF 0%, #3EECAC 50%, #FFB6C1 100%);
+  border-radius: 1rem;
+  filter: blur(24px);
+  opacity: 0.3;
+  transition: opacity 500ms ease-in-out;
+}
+
+.dream-card-wrapper:hover .dream-card-glow {
+  opacity: 0.5;
+}
+
+/* Card main */
+.dream-card {
+  position: relative;
+  background-color: rgba(13, 13, 26, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(166, 108, 255, 0.3);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #A66CFF;
+}
+
+/* Textarea */
+.dream-textarea {
+  width: 100%;
+  height: 12rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(13, 13, 26, 0.5);
+  border: 1px solid rgba(166, 108, 255, 0.3);
+  border-radius: 0.75rem;
+  color: #F5F5F5;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+  transition: all 300ms ease-in-out;
+}
+
+.dream-textarea::placeholder {
+  color: rgba(245, 245, 245, 0.4);
+}
+
+.dream-textarea:focus {
+  outline: none;
+  border-color: #3EECAC;
+  box-shadow: 0 0 0 3px rgba(62, 236, 172, 0.3);
+}
+
+.dream-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Character count */
+.textarea-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: rgba(245, 245, 245, 0.6);
+}
+
+.textarea-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+
+.submit-button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #A66CFF 0%, #3EECAC 100%);
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #0D0D1A;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+.submit-button:hover:not(:disabled) {
+  box-shadow: 0 10px 30px rgba(166, 108, 255, 0.5);
+  transform: scale(1.02);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Shimmer effect */
+.button-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+}
+
+.submit-button:hover:not(:disabled) .button-shimmer {
+  animation: shimmer 1s ease-in-out;
+}
+
+/* Spinner */
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-circle {
+  opacity: 0.25;
+}
+
+.spinner-path {
+  opacity: 0.75;
+}
+
+/* ============================================
+   FEATURE HIGHLIGHTS
+   ============================================ */
+
+.features-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+.feature-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.feature-title-aqua {
+  color: #3EECAC;
+}
+
+.feature-title-purple {
+  color: #A66CFF;
+}
+
+.feature-title-pink {
+  color: #FFB6C1;
+}
+
+.feature-description {
+  color: rgba(245, 245, 245, 0.6);
+}
+
+/* ============================================
+   FLOATING DECORATIONS
+   ============================================ */
+
+.floating-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-blob-1 {
+  top: 5rem;
+  left: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  background: rgba(166, 108, 255, 0.2);
+}
+
+.floating-blob-2 {
+  bottom: 5rem;
+  right: 2.5rem;
+  width: 8rem;
+  height: 8rem;
+  background: rgba(62, 236, 172, 0.2);
+  animation-delay: 1s;
+}
+
+/* ============================================
+   FEATURE BUTTON (for clickable features)
+   ============================================ */
+
+.feature-item-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  padding: 0;
+}
+
+.feature-item-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.feature-item-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner-small {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   GENERATED IMAGE SECTION
+   ============================================ */
+
+.generated-image-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.generated-image-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.generated-image-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #A66CFF, #3EECAC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(166, 108, 255, 0.1);
+  border: 1px solid rgba(166, 108, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #A66CFF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.download-btn:hover {
+  background: rgba(166, 108, 255, 0.2);
+  border-color: rgba(166, 108, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.generated-image-container {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.generated-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   DREAM ANALYSIS SECTION
+   ============================================ */
+
+.dream-analysis-section {
+  margin-top: 1.5rem;
+  background: rgba(166, 108, 255, 0.05);
+  border: 1px solid rgba(166, 108, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.analysis-header {
+  margin-bottom: 1rem;
+}
+
+.analysis-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #A66CFF;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analysis-icon {
+  font-size: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.analysis-content {
+  color: rgba(245, 245, 245, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Styling cho markdown-style formatting trong analysis */
+.analysis-content strong {
+  color: #3EECAC;
+  font-weight: 600;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,209 @@
+/* ============================================
+   HEADER COMPONENT STYLES
+   ============================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: var(--color-background-80);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-primary-20);
+  transition: left 0.3s ease, right 0.3s ease;
+}
+
+/* Header dịch chuyển khi sidebar mở */
+.header.sidebar-open {
+  left: 280px; /* Width của sidebar khi expanded */
+}
+
+/* Header dịch chuyển khi sidebar collapsed */
+.header.sidebar-collapsed {
+  left: 60px; /* Width của sidebar khi collapsed */
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-glow-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+  filter: blur(24px);
+  opacity: 0.5;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.logo-text {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+  }
+}
+
+.nav-link {
+  color: #F5F5F5;
+  text-decoration: none;
+  position: relative;
+  transition: color 300ms ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  transition: width 300ms ease-in-out;
+}
+
+.nav-link:hover .nav-link-underline {
+  width: 100%;
+}
+
+/* CTA Button */
+.cta-button {
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-background);
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.cta-button:hover {
+  box-shadow: 0 10px 20px var(--color-primary-50);
+  transform: scale(1.05);
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobile-menu-button {
+  display: block;
+  color: #F5F5F5;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 300ms ease-in-out;
+}
+
+.mobile-menu-button:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  display: block;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  animation: fadeInTop 300ms ease-out;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu-link {
+  display: block;
+  color: #F5F5F5;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 300ms ease-in-out;
+}
+
+.mobile-menu-link:hover {
+  color: var(--color-primary);
+}
+
+.mobile-cta-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-background);
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.mobile-cta-button:hover {
+  box-shadow: 0 10px 20px var(--color-primary-50);
+}
+
+/* ============================================
+   ICONS
+   ============================================ */
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ============================================
+   RESPONSIVE - SIDEBAR
+   ============================================ */
+@media (max-width: 768px) {
+  .header.sidebar-open,
+  .header.sidebar-collapsed {
+    left: 0; /* Mobile: Header full width */
+  }
+}
