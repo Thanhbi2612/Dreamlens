@@ -96,16 +96,14 @@ async def google_callback(request: Request, db: AsyncSession = Depends(get_db)):
         )
 
         # Redirect to frontend with token
-        frontend_url = "http://localhost:5173"
         return RedirectResponse(
-            url=f"{frontend_url}?token={access_token}&login=success"
+            url=f"{settings.FRONTEND_URL}?token={access_token}&login=success"
         )
 
     except Exception as e:
         # Redirect to frontend with error
-        frontend_url = "http://localhost:5173"
         return RedirectResponse(
-            url=f"{frontend_url}?error=google_login_failed"
+            url=f"{settings.FRONTEND_URL}?error=google_login_failed"
         )
 
 
