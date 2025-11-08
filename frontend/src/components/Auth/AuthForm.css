@@ -270,12 +270,25 @@
 }
 
 @media (max-width: 640px) {
+  .auth-card-wrapper {
+    max-width: 100%;
+  }
+
   .auth-card {
     padding: 1.25rem 1rem;
+    border-radius: 20px;
+  }
+
+  .auth-card-glow {
+    border-radius: 20px;
   }
 
   .auth-title {
     font-size: 1.5rem;
+  }
+
+  .auth-subtitle {
+    font-size: 0.8rem;
   }
 
   .auth-header {
@@ -286,11 +299,73 @@
     gap: 0.625rem;
   }
 
+  .form-input {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .password-input-wrapper .form-input {
+    padding-right: 2.75rem;
+  }
+
+  .password-toggle-btn {
+    right: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .auth-button,
+  .google-auth-button {
+    padding: 0.65rem;
+    font-size: 0.875rem;
+  }
+
   .auth-divider {
     margin: 0.625rem 0;
+    gap: 0.5rem;
   }
 
   .auth-footer {
     margin-top: 0.625rem;
+  }
+
+  .error-message {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1rem 0.875rem;
+    border-radius: 16px;
+  }
+
+  .auth-card-glow {
+    border-radius: 16px;
+  }
+
+  .auth-title {
+    font-size: 1.35rem;
+  }
+
+  .auth-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .form-label {
+    font-size: 0.8rem;
+  }
+
+  .form-input {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .remember-me-label {
+    font-size: 0.85rem;
+  }
+
+  .auth-link-text {
+    font-size: 0.8rem;
   }
 }

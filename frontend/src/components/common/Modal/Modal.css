@@ -80,3 +80,41 @@
   }
 }
 
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-start;
+    padding-top: 3.5rem;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    max-height: calc(100vh - 4rem);
+    width: 100%;
+  }
+
+  .modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0.25rem;
+    padding-top: 3rem;
+  }
+
+  .modal-content {
+    max-height: calc(100vh - 3.5rem);
+  }
+
+  .modal-close {
+    width: 36px;
+    height: 36px;
+  }
+}
+
