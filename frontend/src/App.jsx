@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { DreamProvider } from './contexts/DreamContext';
@@ -41,6 +42,7 @@ function App() {
           </DreamProvider>
         </AuthProvider>
       </Router>
+      <Analytics />
     </ThemeProvider>
   );
 }
